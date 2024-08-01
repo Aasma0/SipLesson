@@ -1,4 +1,4 @@
-const Category = require("../Models/categoryModel");
+const Category = require("../models/categoryModel");
 
 //  controller for adding a category
 const addCategory = async (req, res) => {
@@ -54,31 +54,31 @@ const addCategory = async (req, res) => {
 //     }
 
 
-// // controller for updating a category
+// controller for updating a category
 
-// const updateCategory = async (req, res) => {
-//     const { name, description } = req.body;
-//     if (!name || !description) {
-//         return res.status(400).json({ msg: "All fields are required" });
-//     }
-//     try {
-//         const category = await Category.findByIdAndUpdate(
-//         req.params.id,
-//         { name, description },
-//         { new: true }
-//         );
-//         if (!category) {
-//         return res.status(404).json({ msg: "Category not found" });
-//         }
-//         return res
-//         .status(200)
-//         .json({ msg: "Category updated successfully", category });
-//     } catch (error) {
-//         return res.status(500).json({ msg: error.message });
-//     }
-//     }
+const updateCategory = async (req, res) => {
+    const { name, description } = req.body;
+    if (!name || !description) {
+        return res.status(400).json({ msg: "All fields are required" });
+    }
+    try {
+        const category = await Category.findByIdAndUpdate(
+        req.params.id,
+        { name, description },
+        { new: true }
+        );
+        if (!category) {
+        return res.status(404).json({ msg: "Category not found" });
+        }
+        return res
+        .status(200)
+        .json({ msg: "Category updated successfully", category });
+    } catch (error) {
+        return res.status(500).json({ msg: error.message });
+    }
+    }
 
-// // controller for deleting a category
+// controller for deleting a category
 
 // const deleteCategory = async (req, res) => {
 //     try {
@@ -92,4 +92,4 @@ const addCategory = async (req, res) => {
 //     }
 //     }
 
-module.exports = { addCategory};
+module.exports = { addCategory, updateCategory };

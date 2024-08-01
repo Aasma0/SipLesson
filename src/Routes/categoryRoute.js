@@ -3,6 +3,8 @@ const router = express.Router();
 const auth = require("../middleware/authMiddleware");
 const authorizeRole = require("../middleware/authorizationMiddleware");
 const categoryController = require("../Controllers/categoryController");
+const { addCategory, updateCategory } = require("../Controllers/categoryController"); // Import the updateCategory controller
+
 
 /**
  * @description To get all categories
@@ -12,6 +14,16 @@ const categoryController = require("../Controllers/categoryController");
  * @return response
  */
 
-router.post("/create", auth, authorizeRole('admin'), categoryController.addCategory);
+router.post("/create", auth, authorizeRole('admin'), addCategory);
+
+/**
+ * @description To update a category
+ * @api /api/category/update/:id
+ * @access PRIVATE
+ * @type PUT
+ * @return response
+ */
+router.put("/update/:id", auth, authorizeRole('admin'), updateCategory);
 
 module.exports = router;
+

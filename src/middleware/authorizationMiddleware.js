@@ -24,3 +24,4 @@ function authorizeRole(role) {
 }
 
 module.exports = authorizeRole;
+

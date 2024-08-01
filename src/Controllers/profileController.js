@@ -41,7 +41,7 @@ const updateUserProfile = async (req, res) => {
 // Get user profile
 const getUserProfile = async (req, res) => {
   try {
-    const profile = await UserProfiles.findOne({ user: req.user._id }).populate(
+    const profile = await UserProfiles.findOne({ user: req.user.id }).populate(
       "user",
       ["name", "email"]
     );
