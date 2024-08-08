@@ -6,10 +6,12 @@ const authRoute = require('./src/Routes/authRoute');
 const profileRoutes = require("./src/Routes/ProfileRoutes")
 const categoryRoutes=require('./src/Routes/categoryRoute')
 const productRoutes=require('./src/Routes/productRoutes')
+const cors = require('cors');
 
 
 
 app.use(express.json()); // Middleware to parse JSON
+app.use(cors());
 
 const port = process.env.PORT || 5000;
 
