@@ -20,7 +20,7 @@ const {
  * @param {Object} res - Express response object
  * @returns {Object} response - The response object containing the created product
  */
-router.post('/', authMiddleware, authorizeRole('admin'), productImage.single('productImage'), createProduct);
+router.post('/create', authMiddleware, authorizeRole('admin'), productImage.single('productImage'), createProduct);
 
 /**
  * @description Update an existing product
@@ -30,7 +30,7 @@ router.post('/', authMiddleware, authorizeRole('admin'), productImage.single('pr
  * @param {Object} res - Express response object
  * @returns {Object} response - The response object containing the updated product
  */
-router.put('/:id', authMiddleware, authorizeRole('admin'), productImage.single('productImage'), updateProduct);
+router.put('/update/:id', authMiddleware, authorizeRole('admin'), productImage.single('productImage'), updateProduct);
 
 /**
  * @description Delete a product
@@ -40,7 +40,7 @@ router.put('/:id', authMiddleware, authorizeRole('admin'), productImage.single('
  * @param {Object} res - Express response object
  * @returns {Object} response - The response object confirming deletion
  */
-router.delete('/:id', authMiddleware, authorizeRole('admin'), deleteProduct);
+router.delete('/delete/:id', authMiddleware, authorizeRole('admin'), deleteProduct);
 
 /**
  * @description Get a single product by ID
@@ -50,7 +50,7 @@ router.delete('/:id', authMiddleware, authorizeRole('admin'), deleteProduct);
  * @param {Object} res - Express response object
  * @returns {Object} response - The response object containing the product data
  */
-router.get('/:id', getProduct);
+router.get('/get/:id', getProduct);
 
 /**
  * @description Get all products
@@ -60,6 +60,6 @@ router.get('/:id', getProduct);
  * @param {Object} res - Express response object
  * @returns {Object} response - The response object containing an array of products
  */
-router.get('/', getProducts);
+router.get('/all', getProducts);
 
 module.exports = router;
