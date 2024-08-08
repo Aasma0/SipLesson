@@ -5,7 +5,9 @@ import ContactUs from './component/form/ContactUs';
 import Login from './component/form/Login';
 import Register from './component/form/Register';
 import NavbarComponent from './component/Navbar/NavbarComponent';
+import CategoryComponent from './component/category/CategoryComponent';
 import './tailwind.css';
+import AddProductComponent from './component/Recipe/AddProductComponent';
 
 // A component that conditionally renders the Navbar
 const AppWithNavbar = () => {
@@ -22,7 +24,9 @@ const AppWithNavbar = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Register />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="*" element={<MainContent />} /> {/* Default route */}
+        <Route path="/recipe" element={<AddProductComponent />} />
+        <Route path="/category" element={< CategoryComponent/>} />
+        <Route path="/" element={<MainContent />} /> {/* Default route */}
       </Routes>
     </>
   );

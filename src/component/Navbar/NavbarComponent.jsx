@@ -15,6 +15,9 @@ function NavbarComponent() {
           <div className="hidden md:flex space-x-4">
             {/* <Link to="/" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Home</Link> */}
             <Link to="/contact" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Contact</Link>
+            <Link to="/recipe" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Recipe</Link>
+            <Link to="/category" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Category</Link>
+
           </div>
         </div>
         {/* Secondary items */}
@@ -35,6 +38,8 @@ function NavbarComponent() {
           <ul>
             {/* <li><Link to="/" className="block text-sm px-2 py-4 text-white bg-brown-700 font-semibold">Home</Link></li> */}
             <li><Link to="/contact" className="block text-sm px-2 py-4 hover:bg-brown-700 transition duration-300">Contact</Link></li>
+            <li><Link to="/recipe" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Recipe</Link></li>
+            <li><Link to="/category" className="py-4 px-2 text-gray-700 font-semibold hover:text-brown-700 transition duration-300">Category</Link></li>
             <li><Link to="/login" className="block text-sm px-2 py-4 hover:bg-brown-700 transition duration-300">Log In</Link></li>
             <li><Link to="/registration" className="block text-sm px-2 py-4 hover:bg-brown-700 transition duration-300">Sign Up</Link></li>
           </ul>
